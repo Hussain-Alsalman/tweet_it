@@ -67,9 +67,9 @@ function installation {
         gem install twurl
         echo -e "\n\nYou will need to settup your authentication with twitter first"
         echo -e "\n Enter the consumer key: " 
-        read(consumer_key) 
+        read consumer_key
         echo -e "\n Enter the consumer secret:" 
-        read(consumer_secret)
+        read consumer_secret
         echo -e "\n Click on the link and follow the authentication process" 
 
         twurl authorize --consumer-key $consumer_key       \
