@@ -66,4 +66,4 @@ media_id=$(twurl -H "upload.twitter.com" -X POST "/1.1/media/upload.json" --file
 	$(echo -en "$tmp_dir/$file_name.png") --file-field "media" | \
 	python3 -c "import sys, json; print(json.load(sys.stdin)['media_id'])")
 
-twurl -q "/1.1/statuses/update.json" -d "media_ids=$media_id&status=$2"
+twurl -q "/1.1/statuses/update.json" -d "media_ids=$media_id&status=$(echo -e $2)"
